@@ -1,0 +1,417 @@
+/* Start Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #047aed;
+  --secondary-color: #002240;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* Utilities */
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 1em 2em;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  width: fit-content;
+}
+
+.btn:hover {
+  transform: scale(0.95);
+}
+
+input {
+  display: block;
+  margin-top: 2em;
+  padding-bottom: 0.5em;
+  border: none;
+  font-size: 1.6rem;
+}
+
+/* Start Navbar */
+nav {
+  background-color: var(--main-color);
+}
+
+nav .container {
+  min-height: 90px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 3.2rem;
+  font-weight: 300;
+  margin-bottom: 0.5em;
+}
+
+nav .container .nav a {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 300;
+  padding: 0.5em 1em;
+}
+
+nav .container .nav a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+@media (max-width: 576px) {
+  nav .container {
+    flex-direction: column;
+    padding-block: 2em;
+  }
+
+  nav .container .nav {
+    background-color: rgba(51, 51, 51, 0.3);
+    padding: 1em;
+  }
+}
+
+/* Start Header */
+header {
+  background-color: var(--main-color);
+  padding-block: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  width: 110%;
+  height: 30%;
+  background-color: #fff;
+  position: absolute;
+  bottom: -40px;
+  left: -10px;
+  transform: rotate(-3deg);
+}
+
+header .header-content {
+  max-width: 55%;
+  color: #fff;
+  align-self: flex-start;
+  margin-top: 3rem;
+}
+
+header .header-content h1 {
+  letter-spacing: 1px;
+  font-size: 4.5rem;
+  font-weight: 500;
+}
+
+header .header-content p {
+  margin-block: 1em 1.4em;
+  font-size: 1.7rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+header .header-content .btn {
+  margin-top: 0;
+}
+
+header form {
+  background-color: #fff;
+  width: 40%;
+  padding: 5em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  align-self: flex-start;
+}
+
+header input {
+  outline: none;
+  border-bottom: 1px solid #333;
+  width: 100%;
+  font-weight: 300;
+}
+
+header .btn {
+  background-color: var(--main-color);
+  margin-top: 3rem;
+  align-self: flex-start;
+}
+
+@media (max-width: 767px) {
+  header .container {
+    flex-direction: column;
+  }
+
+  header .header-content {
+    max-width: 90%;
+    margin: 0 auto 10rem;
+    text-align: center;
+  }
+
+  header form {
+    width: 90%;
+    padding: 4em 4em 2em;
+    min-height: 300px;
+  }
+}
+
+/* Stats Section */
+
+.stats-section {
+  padding-block: 5rem;
+  line-height: 1.6;
+}
+
+.stats-section .container > p {
+  text-align: center;
+  font-size: 2rem;
+  width: 60%;
+  margin-inline: auto;
+}
+
+.stats-section .stats {
+  text-align: center;
+  margin-top: 4rem;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.stats-section .stats i {
+  font-size: 4rem;
+}
+
+.stats-section .stats h3 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.stats-section .stats p {
+  font-size: 2rem;
+  color: var(--main-color);
+}
+
+.cli {
+  display: flex;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.cli-image {
+  flex: 2;
+}
+
+.cli-feature {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.cli-feature .feat {
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 1.7rem;
+}
+
+@media (max-width: 767px) {
+  .stats-section .container > p {
+    width: 95%;
+  }
+
+  .stats-section .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .cli {
+    flex-direction: column;
+  }
+
+  .cli .cli-feature {
+    margin-top: 3rem;
+  }
+}
+
+/* Cloud */
+.cloud {
+  background-color: var(--main-color);
+  padding-block: 3rem;
+}
+
+.cloud .cloud-info {
+  text-align: center;
+  line-height: 1.6;
+  color: #fff;
+  width: 60%;
+}
+
+.cloud .cloud-info h2 {
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+.cloud .cloud-info p {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-block: 0 2rem;
+}
+
+.cloud .cloud-info .btn {
+  margin-inline: auto;
+  background-color: var(--secondary-color);
+  border: none;
+  font-weight: 300;
+}
+
+.cloud .cloud-img {
+  width: 40%;
+}
+
+@media (max-width: 767px) {
+  .cloud .container {
+    flex-direction: column;
+  }
+
+  .cloud .cloud-info {
+    width: 90%;
+    margin-bottom: 3rem;
+  }
+
+  .cloud .cloud-info h2 {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  .cloud .cloud-img {
+    width: 90%;
+  }
+}
+
+/* Languages */
+.languages {
+  text-align: center;
+  padding-block: 3rem;
+}
+
+.languages h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 5rem;
+}
+
+.languages .languages-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.languages .languages-list .language {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 50%;
+  transition: transform 0.3s;
+}
+
+.languages .languages-list .language:hover {
+  transform: translateY(-10px);
+}
+
+.languages .languages-list .language h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding-block: 7rem;
+  font-weight: 300;
+}
+
+footer .container {
+  justify-content: space-around;
+}
+
+footer .copyright p {
+  font-size: 1.5rem;
+}
+
+footer ul a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+footer .social i:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+footer .social i {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .copyright,
+  footer ul {
+    margin-bottom: 3rem;
+  }
+}

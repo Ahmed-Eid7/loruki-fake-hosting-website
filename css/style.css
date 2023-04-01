@@ -8,6 +8,7 @@
 :root {
   --main-color: #047aed;
   --secondary-color: #002240;
+  --gray-color: #f4f4f4;
 }
 
 html {
@@ -116,7 +117,7 @@ header {
   overflow: hidden;
 }
 
-header::before {
+.home::before {
   content: "";
   width: 110%;
   height: 30%;
@@ -136,13 +137,13 @@ header .header-content {
 
 header .header-content h1 {
   letter-spacing: 1px;
-  font-size: 4.5rem;
-  font-weight: 500;
+  font-size: 6rem;
+  font-weight: 300;
 }
 
 header .header-content p {
   margin-block: 1em 1.4em;
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 300;
   line-height: 1.6;
 }
@@ -413,5 +414,117 @@ footer .social i {
   footer .copyright,
   footer ul {
     margin-bottom: 3rem;
+  }
+}
+
+/* Feature Page Style */
+
+header .header-img {
+  display: flex;
+  justify-content: end;
+}
+
+header img {
+  width: 40%;
+}
+
+.platform {
+  background-color: var(--gray-color);
+  padding-block: 5rem;
+}
+
+.platform .platform-content {
+  width: 40%;
+}
+
+.platform .platform-content h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.platform .platform-content p {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #333;
+}
+
+.platform .platform-img {
+  width: 30%;
+}
+
+.grid {
+  padding-block: 5rem;
+}
+
+.grid .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid .box {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 4rem 3rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.grid .box:first-child {
+  grid-area: 1 / 1 / 1 / -1;
+}
+
+.grid .box:nth-child(2) {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+.grid .box i {
+  font-size: 4rem;
+}
+
+.grid .box p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .feature-header .header-content {
+    margin-bottom: 0;
+  }
+  header .header-img {
+    justify-content: center;
+  }
+
+  header .header-img img {
+    width: 70%;
+  }
+
+  .platform .container {
+    flex-direction: column;
+  }
+
+  .platform .platform-content {
+    width: 90%;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .platform .platform-img {
+    width: 100%;
+  }
+
+  .grid .container {
+    grid-template-columns: 1fr;
+  }
+
+  .grid .box:first-child {
+    grid-area: 1 / 1 / 1 / -1;
+  }
+
+  .grid .box:nth-child(2) {
+    grid-area: 2 / 1 / 3 / -1;
   }
 }
